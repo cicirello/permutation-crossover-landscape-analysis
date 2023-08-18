@@ -26,8 +26,8 @@ import org.cicirello.search.Configurator;
 import org.cicirello.search.ReoptimizableMetaheuristic;
 import org.cicirello.search.evo.AdaptiveEvolutionaryAlgorithm;
 import org.cicirello.search.evo.AdaptiveMutationOnlyEvolutionaryAlgorithm;
-import org.cicirello.search.evo.InverseCostFitnessFunction;
-import org.cicirello.search.evo.StochasticUniversalSampling;
+import org.cicirello.search.evo.NegativeIntegerCostFitnessFunction;
+import org.cicirello.search.evo.TournamentSelection;
 import org.cicirello.search.operators.CrossoverOperator;
 import org.cicirello.search.operators.MutationOperator;
 import org.cicirello.search.operators.permutations.CycleCrossover;
@@ -123,8 +123,8 @@ public class HaystackEMExperiments {
               POPULATION_SIZE,
               mutationOp.split(),
               new PermutationInitializer(PERM_LENGTH),
-              new InverseCostFitnessFunction<Permutation>(problem),
-              new StochasticUniversalSampling(),
+              new NegativeIntegerCostFitnessFunction<Permutation>(problem),
+              new TournamentSelection(),
               1));
 
       // Adaptive EA for each crossover op using Swap as mutation
@@ -135,8 +135,8 @@ public class HaystackEMExperiments {
                 mutationOp.split(),
                 crossover.split(),
                 new PermutationInitializer(PERM_LENGTH),
-                new InverseCostFitnessFunction<Permutation>(problem),
-                new StochasticUniversalSampling(),
+                new NegativeIntegerCostFitnessFunction<Permutation>(problem),
+                new TournamentSelection(),
                 1));
       }
 
