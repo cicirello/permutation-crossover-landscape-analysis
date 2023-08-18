@@ -14,7 +14,7 @@ build:
 # Runs all experiments
 
 .PHONY: experiments
-experiments: HaystackEM HaystackEdge
+experiments: HaystackEM HaystackEdge HaystackDirectedEdge
 
 .PHONY: HaystackEM
 HaystackEM:
@@ -23,3 +23,7 @@ HaystackEM:
 .PHONY: HaystackEdge
 HaystackEdge:
 	java -cp ${JARFILE} org.cicirello.experiments.permutationxoverlandscapes.HaystackEdgeExperiments > ${pathToDataFiles}/haystack.xover.edge.txt
+
+.PHONY: HaystackDirectedEdge
+HaystackDirectedEdge:
+	java -cp ${JARFILE} org.cicirello.experiments.permutationxoverlandscapes.HaystackDirectedEdgeExperiments > ${pathToDataFiles}/haystack.xover.directedededge.txt
