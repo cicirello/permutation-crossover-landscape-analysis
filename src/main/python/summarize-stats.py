@@ -86,7 +86,11 @@ if __name__ == "__main__" :
             print("\t{0:.2f}".format(devs[head][i]), end="")
         print()
 
-    w = 2.98
+    line_colors = ["black", "brown", "red", "salmon",
+                   "orange", "gold", "green", "lime",
+                   "blue", "cyan", "slategray",
+                   "magenta", "purple"]
+    w = 2.95
     h = w
     matplotlib.pyplot.rc('font', size=8)
     matplotlib.pyplot.rc('text', usetex=True)
@@ -97,7 +101,8 @@ if __name__ == "__main__" :
         line, = ax.plot(lengths,
                         means[headings[i]],
                         #styles[i],
+                        color = line_colors[i-2],
                         label = headings[i])
-    ax.legend()
+    ax.legend(loc='lower left')
     matplotlib.pyplot.savefig(figureFilename)
     matplotlib.pyplot.savefig(epsFilename)
