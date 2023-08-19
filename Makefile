@@ -11,6 +11,26 @@ pathToDataFiles = "data"
 build:
 	mvn clean package
 
+# Analyzes data assuming experiments already run
+
+.PHONY: analysis
+analysis:
+	$(py) -m pip install --user pycairo
+	$(py) -m pip install --user matplotlib
+	$(py) src/main/python/summarize-stats.py ${pathToDataFiles}/haystack.xover.em.txt > ${pathToDataFiles}/summary.haystack.xover.em.txt
+	$(py) src/main/python/summarize-stats.py ${pathToDataFiles}/haystack.xover.edge.txt > ${pathToDataFiles}/summary.haystack.xover.edge.txt
+	$(py) src/main/python/summarize-stats.py ${pathToDataFiles}/haystack.xover.directedededge.txt > ${pathToDataFiles}/summary.haystack.xover.directedededge.txt
+	$(py) src/main/python/summarize-stats.py ${pathToDataFiles}/haystack.xover.tau.txt > ${pathToDataFiles}/summary.haystack.xover.tau.txt
+	$(py) src/main/python/summarize-stats.py ${pathToDataFiles}/haystack.xover.lee.txt > ${pathToDataFiles}/summary.haystack.xover.lee.txt
+
+.PHONY: epstopdf
+epstopdf:
+	epstopdf ${pathToDataFiles}/haystack.xover.em.eps
+	epstopdf ${pathToDataFiles}/haystack.xover.edge.eps
+	epstopdf ${pathToDataFiles}/haystack.xover.directedededge.eps
+	epstopdf ${pathToDataFiles}/haystack.xover.tau.eps
+	epstopdf ${pathToDataFiles}/haystack.xover.lee.eps
+
 # Runs all experiments
 
 .PHONY: experiments
