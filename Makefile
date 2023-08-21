@@ -19,7 +19,7 @@ analysis:
 	$(py) -m pip install --user matplotlib
 	$(py) src/main/python/summarize-stats.py ${pathToDataFiles}/haystack.xover.em.txt > ${pathToDataFiles}/summary.haystack.xover.em.txt
 	$(py) src/main/python/summarize-stats.py ${pathToDataFiles}/haystack.xover.edge.txt > ${pathToDataFiles}/summary.haystack.xover.edge.txt
-	$(py) src/main/python/summarize-stats.py ${pathToDataFiles}/haystack.xover.directedededge.txt > ${pathToDataFiles}/summary.haystack.xover.directedededge.txt
+	$(py) src/main/python/summarize-stats.py ${pathToDataFiles}/haystack.xover.directededge.txt > ${pathToDataFiles}/summary.haystack.xover.directededge.txt
 	$(py) src/main/python/summarize-stats.py ${pathToDataFiles}/haystack.xover.tau.txt > ${pathToDataFiles}/summary.haystack.xover.tau.txt
 	$(py) src/main/python/summarize-stats.py ${pathToDataFiles}/haystack.xover.lee.txt > ${pathToDataFiles}/summary.haystack.xover.lee.txt
 
@@ -27,7 +27,7 @@ analysis:
 epstopdf:
 	epstopdf ${pathToDataFiles}/haystack.xover.em.eps
 	epstopdf ${pathToDataFiles}/haystack.xover.edge.eps
-	epstopdf ${pathToDataFiles}/haystack.xover.directedededge.eps
+	epstopdf ${pathToDataFiles}/haystack.xover.directededge.eps
 	epstopdf ${pathToDataFiles}/haystack.xover.tau.eps
 	epstopdf ${pathToDataFiles}/haystack.xover.lee.eps
 
@@ -46,7 +46,7 @@ HaystackEdge:
 
 .PHONY: HaystackDirectedEdge
 HaystackDirectedEdge:
-	java -cp ${JARFILE} org.cicirello.experiments.permutationxoverlandscapes.HaystackDirectedEdgeExperiments > ${pathToDataFiles}/haystack.xover.directedededge.txt
+	java -cp ${JARFILE} org.cicirello.experiments.permutationxoverlandscapes.HaystackDirectedEdgeExperiments > ${pathToDataFiles}/haystack.xover.directededge.txt
 
 .PHONY: HaystackTau
 HaystackTau:
