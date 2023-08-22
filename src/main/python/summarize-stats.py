@@ -36,7 +36,7 @@ def parse(filename) :
             else :
                 row = line.split()
                 if len(row) > 2 :
-                    generations = row[1]
+                    generations = int(row[1])
                     if int(row[0]) == 1 :
                         lengths.append(generations)
                     for i in range(2, len(row)) :
@@ -97,6 +97,7 @@ if __name__ == "__main__" :
     fig, ax = matplotlib.pyplot.subplots(figsize=(w,h), constrained_layout=True)
     matplotlib.pyplot.xlabel('number of generations (log scale)')
     matplotlib.pyplot.ylabel('average solution cost')
+    matplotlib.pyplot.xscale('log')
     for i in range(2, len(headings)) :
         line, = ax.plot(lengths,
                         means[headings[i]],
