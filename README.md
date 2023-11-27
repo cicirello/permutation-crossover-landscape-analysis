@@ -5,7 +5,7 @@ Copyright &copy; 2023 Vincent A. Cicirello
 This repository contains code to reproduce the experiments, and analysis of 
 experimental data, from the following paper:
 
-> Vincent A. Cicirello. 2023. [A Survey and Analysis of Evolutionary Operators for Permutations](https://www.cicirello.org/publications/cicirello2023ecta.html). In *Proceedings of the 15th International Joint Conference on Computational Intelligence*, pages 288-299. doi:[10.5220/0012204900003595](https://doi.org/10.5220/0012204900003595).
+> Vincent A. Cicirello. 2023. [A Survey and Analysis of Evolutionary Operators for Permutations](https://www.cicirello.org/publications/cicirello2023ecta.pdf). In *Proceedings of the 15th International Joint Conference on Computational Intelligence*, pages 288-299. doi:[10.5220/0012204900003595](https://doi.org/10.5220/0012204900003595).
 
 | __Related Publication__ | [![doi:10.5220/0012204900003595](doi.svg)](https://doi.org/10.5220/0012204900003595) |
 | :--- | :--- |
