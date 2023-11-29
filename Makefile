@@ -11,6 +11,15 @@ pathToDataFiles = "data"
 build:
 	mvn clean package
 
+.PHONY: download
+download:
+ifeq ($(OS),Windows_NT)
+	if not exist target mkdir target
+else
+	mkdir -p target
+endif
+	cd target && curl -O -J -L  "https://repo1.maven.org/maven2/org/cicirello/permutation-crossover-landscape-analysis/1.0.0/permutation-crossover-landscape-analysis-1.0.0-jar-with-dependencies.jar"
+
 # Analyzes data assuming experiments already run
 
 .PHONY: analysis
